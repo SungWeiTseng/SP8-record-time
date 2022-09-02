@@ -17,19 +17,18 @@ let row_2 = document.createElement('tr');
 let heading = document.createElement('th');
 heading.innerHTML = "Camera ID";
 row_1.appendChild(heading);
-
-let timeData = document.createElement('td');
-timeData.id = "Time";
-row_2.appendChild(timeData);
+let heading2 = document.createElement('th');
+heading2.innerHTML = "Time";
+row_1.appendChild(heading2);
 
 for (var i = 0; i < parseInt(columns); i++) {
-    let heading = document.createElement('th');
-    heading.innerHTML = (i + 1).toString();
-    row_1.appendChild(heading);
+    let cameraRow = document.createElement('tr');
+    cameraRow.innerHTML = (i + 1).toString();
+    tbody.appendChild(cameraRow);
 
-    let timeData = document.createElement('td');
-    timeData.id = i.toString();
-    row_2.appendChild(timeData);
+    let time = document.createElement('th');
+    time.id = i.toString();
+    cameraRow.appendChild(time);
 }
 thead.appendChild(row_1);
 tbody.appendChild(row_2);
@@ -48,8 +47,9 @@ function getTime() {
 
 colCount = 0;
 function recordTime() {
-    if (colCount == parseInt(columns)) return;
+    if (colCount > parseInt(columns)) return;
+    var element = document.getElementById(colCount);
     time = getTime();
-    children[colCount].innerHTML = time.hour + ":" + time.minute + ":" + time.second;
+    element.innerHTML = time.hour + ":" + time.minute + ":" + time.second;
     colCount++;
 }
