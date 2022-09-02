@@ -20,34 +20,36 @@
             border-bottom-color: rgb(230, 189, 189);
         }
 
-            /* Padding and font style */
-            table td, table th {
-                padding: 5px 10px;
-                font-size: 12px;
-                font-family: Verdana;
-                color: rgb(177, 106, 104);
-            }
+        /* Padding and font style */
+        table td, table th {
+            padding: 5px 10px;
+            font-size: 12px;
+            font-family: Verdana;
+            color: rgb(177, 106, 104);
+        }
 
-            /* Alternating background colors */
-            table tr:nth-child(even) {
-                background: rgb(238, 211, 210)
-            }
+        /* Alternating background colors */
+        table tr:nth-child(even) {
+            background: rgb(238, 211, 210)
+        }
 
-            table tr:nth-child(odd) {
-                background: #FFF
-            }
+        table tr:nth-child(odd) {
+            background: #FFF
+        }
     </style>
 
 </head>
 <body id="body">
     <label for="fname">路線:</label>
-    <input type="text" id="fname" name="fname"><br>
+    <input type="text" id="fname" name="fname">
 
     <label for="wheather">天氣:</label>
     <select name="wheather">
         <option value="rain">雨天</option>
         <option value="sun">晴天</option>
     </select>
+
+    <button style="height:40px;width:50px" onclick="recordTime()">record</button>
 
     <fieldset>
         <legend>天色</legend>
@@ -62,7 +64,6 @@
         </div>
     </fieldset>
 
-    <button onclick="recordTime()">record</button>
     <script src="script.js"></script>
 </body>
 </html>
