@@ -13,6 +13,15 @@ document.getElementById('body').appendChild(table);
 
 let row_1 = document.createElement('tr');
 let row_2 = document.createElement('tr');
+
+let heading = document.createElement('th');
+heading.innerHTML = "Camera ID";
+row_1.appendChild(heading);
+
+let timeData = document.createElement('td');
+timeData.id = "Time";
+row_2.appendChild(timeData);
+
 for (var i = 0; i < parseInt(columns); i++) {
     let heading = document.createElement('th');
     heading.innerHTML = (i + 1).toString();
